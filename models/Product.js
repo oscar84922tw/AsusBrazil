@@ -27,7 +27,7 @@ Product.getAll = function(cb) {
 
 Product.get = function(ProductId,cb){
   db.select().from('Product').where({
-    id: ProductId;
+    id: ProductId
   })
   .map(function(row){
     return new Product(row);
@@ -46,13 +46,12 @@ Product.get = function(ProductId,cb){
 
 Product.prototype.save = function(cb){
   if(this.Asus_Part_Number){
-
     db("Product").where({
-      Asus_Part_Number : this.Asus_Part_Number;
+      Asus_Part_Number : this.Asus_Part_Number,
     })
     .update({
-      Desciption : this.Desciption;
-      Unit_price : this.Unit_price;
+      Desciption : this.Desciption,
+      Unit_price : this.Unit_price,
     })
     .then(function() {
         cb(null, this);
