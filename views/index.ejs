@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <meta charset="utf-8">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-        </div>
-      </nav>
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-      <div class="login">
-        <div class="usr form-group">
-          <label for="usr">Name:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="pwd form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
-        <div class="login">
-          <button class="login btn-primary btn-lg" action>login</button>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+  <title>Asus</title>
+</head>
+<body>
+<h1>Invoice</h1>
+<h3>留言</h3>
+<form method="post" action="/add_invoice">
+  Invoice_No:&nbsp;&nbsp;<input name="Invoice_No" type="text"><br/><br/>
+  Invoice_Date:&nbsp;&nbsp;<textarea name="Invoice_Date"></textarea><br/><br/>
+  c_name:&nbsp;&nbsp;<textarea name="c_name"></textarea><br/><br/>
+  Dealer_VAT_No:&nbsp;&nbsp;<textarea name="Dealer_VAT_No"></textarea><br/><br/>
+  <input type="submit" value="发表留言"/>
+</form>
+<h3>History</h3>
+<hr/>
+<% for(var i = Invoice.length - 1; i >= 0; i--) { %>
+<!-- ejs for -->
+<b>Invoice No:</b>&nbsp;&nbsp;&nbsp;&nbsp;<%= Invoice[i].Invoice_No %><br/>
+<b>内容:</b><br/>
+<%= Invoice[i].content %><br/>
+<a href="/edit?id=<%= Invoice[i].id %>">编辑留言</a>&nbsp;&nbsp;&nbsp;<a href="/del_invoice?id=<%= Invoice[i].id %>">删除留言</a>
+<hr/>
+<% } %>
+</body>
 </html>
