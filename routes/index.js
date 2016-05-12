@@ -34,7 +34,9 @@ router.post('/add_invoice', function (req, res, next) {
     res.render('404');
     return;
   }
+
   var invoice = {
+    Invoice_No: req.body.Invoice_No,
     Invoice_Date: req.body.Invoice_Date,
     Dealer_VAT_No: req.body.Dealer_VAT_No,
     c_name: req.body.c_name
