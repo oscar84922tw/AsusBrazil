@@ -18,9 +18,15 @@ var Invoice = db.define('Invoice'
         },
         c_name: {
             type: Sequelize.STRING(30)
+
         },
         Dealer_VAT_No: {
-            type: Sequelize.INTEGER(30)
+            type: Sequelize.INTEGER(30),
+            references:{
+                // model: Dealer,
+                // key: 'Dealer_VAT_No',
+
+            }
         }
     }
 )
