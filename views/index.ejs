@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Asus</title>
-</head>
-<body>
+<% include ./header %>
+
 <h1>Invoice</h1>
 <form method="post" action="/add_invoice">
-  Invoice_No:&nbsp;&nbsp;<input name="Invoice_No" type="text"><br/><br/>
-  Invoice_Date:&nbsp;&nbsp;<textarea name="Invoice_Date"></textarea><br/><br/>
-  c_name:&nbsp;&nbsp;<textarea name="c_name"></textarea><br/><br/>
-  Dealer_VAT_No:&nbsp;&nbsp;<textarea name="Dealer_VAT_No"></textarea><br/><br/>
-  <input type="submit" value="发表留言"/>
+    Invoice_No:&nbsp;&nbsp;<input name="Invoice_No" type="text"><br/><br/>
+    Invoice_Date:&nbsp;&nbsp;<textarea name="Invoice_Date"></textarea><br/><br/>
+    c_name:&nbsp;&nbsp;<textarea name="c_name"></textarea><br/><br/>
+    Dealer_VAT_No:&nbsp;&nbsp;<textarea name="Dealer_VAT_No"></textarea><br/><br/>
+    <input type="submit" value="发表留言"/>
 </form>
 <h3>History</h3>
 <hr/>
