@@ -4,8 +4,7 @@
 
 var db = require('../models/db');
 var Sequelize = require('sequelize');
-var Invoice = db.define('Invoice'
-    ,
+var Invoice = db.define('Invoice',
     {
         Invoice_No: {
             type: Sequelize.INTEGER(25),
@@ -22,12 +21,17 @@ var Invoice = db.define('Invoice'
         },
         Dealer_VAT_No: {
             type: Sequelize.INTEGER(30),
-            references:{
-                // model: Dealer,
-                // key: 'Dealer_VAT_No',
-
-            }
+            // references:{
+            //     // model: Dealer,
+            //     // key: 'Dealer_VAT_No',
+            //
+            // }
         }
+
+    },
+    {
+        createdAt: false,
+        updatedAt: false
     }
 )
 Invoice.sync();

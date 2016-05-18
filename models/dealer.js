@@ -38,6 +38,10 @@ var Dealer = db.define(
         }
 
 
+    },
+    {
+        createdAt: false,
+        updatedAt: false
     }
 );
 Dealer.sync();

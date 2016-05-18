@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asus</title>
+</head>
+<body>
+<h1>Dealer</h1>
+<form method="post" action="dealer/add_dealer">
+    Dealer_VAT_No:&nbsp;&nbsp;<input name="Dealer_VAT_No" type="number"><br/><br/>
+    Dealer_Name:&nbsp;&nbsp;<input name="Dealer_Name" type="text"><br/><br/>
+    Region:&nbsp;&nbsp;<input name="Region" type="text"><br/><br/>
+    City:&nbsp;&nbsp;<input name="City" type="text"><br/><br/>
+    Zip_Code:&nbsp;&nbsp;<input name="Zip_Code" type="number"><br/><br/>
+    Tel:&nbsp;&nbsp;<input name="Tel" type="number"><br/><br/>
+    Fax:&nbsp;&nbsp;<input name="Fax" type="number"><br/><br/>
+    c_name:&nbsp;&nbsp;<input name="c_name" type="text"><br/><br/>
+    <input type="submit" value="Send"/>
+</form>
+<h3>History</h3>
+<hr/>
+<% for(var i = Dealer.length - 1; i >= 0; i--) { %>
+<!-- ejs for -->
+
+<b>Dealer_VAT_No:</b>&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Dealer_VAT_No %><br/>
+<b>Dealer_Name:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Dealer_Name%></b><br/>
+<b>Region:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Region%></b>
+<b>City:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].City%></b>
+<b>Zip_Code:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Zip_Code%></b>
+<b>Tel:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Tel%></b>
+<b>Fax:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].Fax%></b>
+<b>c_name:&nbsp;&nbsp;&nbsp;&nbsp;<%= Dealer[i].c_name%></b>
+<%= Dealer[i].content %><br/>
+<a href="dealer/edit?Dealer_VAT_No=<%= Dealer[i].Dealer_VAT_No %>">Edit Dealer</a>&nbsp;&nbsp;&nbsp;
+<!-- <a href="dealer/del_dealer?Dealer_VAT_No=<%= Dealer[i].Dealer_VAT_No %>">delete Dealer</a> -->
+<hr/>
+<% } %>
+</body>
+</html>

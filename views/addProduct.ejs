@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asus</title>
+</head>
+<body>
+<h1>Product</h1>
+<form method="post" action="product/add_product">
+    Asus Part No:&nbsp;&nbsp;<input name="Asus_Part_No" type="text"><br/><br/>
+    Unit Price:&nbsp;&nbsp;<input name="Unit_Price" type="number"><br/><br/>
+    Desciption:&nbsp;&nbsp;<textarea name="Description"></textarea><br/><br/>
+    <input type="submit" value="Send"/>
+</form>
+<h3>History</h3>
+<hr/>
+<% for(var i = Product.length - 1; i >= 0; i--) { %>
+<!-- ejs for -->
+<b>Asus Part No:</b>&nbsp;&nbsp;&nbsp;&nbsp;<%= Product[i].Asus_Part_No %><br/>
+<b>Unit Price:&nbsp;&nbsp;&nbsp;&nbsp;<%= Product[i].Unit_Price%></b><br/>
+<b>Description:&nbsp;&nbsp;&nbsp;&nbsp;<%= Product[i].Description%></b>
+<%= Product[i].content %><br/>
+<a href="product/edit?Asus_Part_No=<%= Product[i].Asus_Part_No %>">Edit Product</a>
+<!-- &nbsp;&nbsp;&nbsp;<a href="product/del_product?Asus_Part_No=<%= Product[i].Asus_Part_No %>">Delete Product</a> -->
+<hr/>
+<% } %>
+</body>
+</html>
